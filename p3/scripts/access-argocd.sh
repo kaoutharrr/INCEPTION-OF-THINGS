@@ -27,5 +27,6 @@ read -p "Start port-forward now? (y/n) " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo -e "${GREEN}Starting port-forward... Press Ctrl+C to stop${NC}"
-    kubectl port-forward svc/argocd-server -n argocd 8080:443
+    # Changed port from 8080 to 8081
+    kubectl port-forward svc/argocd-server -n argocd 8081:443
 fi
