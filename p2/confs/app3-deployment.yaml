@@ -49,13 +49,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: app3-service
+  name: app-three-service
   namespace: default
 spec:
   selector:
     app: app-three
   ports:
-  - port: 80
+  - protocol: TCP
+    port: 80
     targetPort: 80
 ---
 apiVersion: v1
