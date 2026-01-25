@@ -30,3 +30,4 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     # Changed port from 8080 to 8081
     kubectl port-forward svc/argocd-server -n argocd 8081:443
 fi
+
