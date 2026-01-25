@@ -2,7 +2,15 @@
 
 echo "Starting deployment of applications..."
 
+echo "Checking files..."
+ls -la /vagrant/confs/
+
 sleep 10
+
+if [ ! -f /vagrant/confs/app1-deployment.yaml ]; then
+    echo "ERROR: Files not found in /vagrant/confs/"
+    exit 1
+fi
 
 kubectl apply -f /vagrant/confs/app1-deployment.yaml
 kubectl apply -f /vagrant/confs/app2-deployment.yaml
